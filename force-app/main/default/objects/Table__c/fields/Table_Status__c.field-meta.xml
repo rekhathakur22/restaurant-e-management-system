@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Table_Status__c</fullName>
+  <label>Table Status</label>
+  <type>Picklist</type>
+  <valueSet>
+    <valueSetDefinition>
+      <sorted>false</sorted>
+      <value>
+        <fullName>Available</fullName>
+      </value>
+      <value>
+        <fullName>Occupied</fullName>
+      </value>
+      <value>
+        <fullName>Reserved</fullName>
+      </value>
+      <value>
+        <fullName>Cleaning</fullName>
+      </value>
+    </valueSetDefinition>
+  </valueSet>
+</CustomField>
