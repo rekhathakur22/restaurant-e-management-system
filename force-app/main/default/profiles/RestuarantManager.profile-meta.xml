@@ -85,10 +85,6 @@
     <visibility>DefaultOn</visibility>
   </tabVisibilities>
 
-  <tabVisibilities>
-    <tab>Report</tab>
-    <visibility>DefaultOn</visibility>
-  </tabVisibilities>
 
   <!-- App Visibility -->
   <applicationVisibilities>

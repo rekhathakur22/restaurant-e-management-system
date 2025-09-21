@@ -68,7 +68,7 @@
   </tabVisibilities>
 
 
-  <!-- <tabVisibilities>
+  <tabVisibilities>
     <tab>Bill__c</tab>
     <visibility>DefaultOn</visibility>
   </tabVisibilities>
@@ -87,14 +87,14 @@
   <tabVisibilities>
     <tab>Inventory__c</tab>
     <visibility>Hidden</visibility>
-  </tabVisibilities> -->
+  </tabVisibilities>
 
   <!-- App Visibility -->
-  <!-- <applicationVisibilities>
+  <applicationVisibilities>
     <application>Restaurant_App</application>
     <visible>true</visible>
     <default>true</default>
-  </applicationVisibilities> -->
+  </applicationVisibilities>
 
   <!-- Basic Salesforce Permissions Waiter Needs -->
   <userPermissions>
