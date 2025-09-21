@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+  <custom>true</custom>
+  <userLicense>Salesforce</userLicense>
+
+  <!-- Object Permissions -->
+  <objectPermissions>
+    <object>Order__c</object>
+    <allowCreate>true</allowCreate>
+    <allowRead>true</allowRead>
+    <allowEdit>true</allowEdit>
+    <allowDelete>false</allowDelete>
+    <viewAllRecords>false</viewAllRecords>
+    <modifyAllRecords>false</modifyAllRecords>
+  </objectPermissions>
+
+  <objectPermissions>
+    <object>Menu_Item__c</object>
+    <allowCreate>false</allowCreate>
+    <allowRead>true</allowRead>
+    <allowEdit>false</allowEdit>
+    <allowDelete>false</allowDelete>
+    <viewAllRecords>false</viewAllRecords>
+    <modifyAllRecords>false</modifyAllRecords>
+  </objectPermissions>
+
+  <objectPermissions>
+    <object>Table__c</object>
+    <allowCreate>true</allowCreate>
+    <allowRead>true</allowRead>
+    <allowEdit>true</allowEdit>
+    <allowDelete>false</allowDelete>
+  </objectPermissions>
+
+  <objectPermissions>
+    <object>Inventory__c</object>
+    <allowCreate>false</allowCreate>
+    <allowRead>true</allowRead>
+    <allowEdit>false</allowEdit>
+    <allowDelete>false</allowDelete>
+  </objectPermissions>
+
+  <objectPermissions>
+    <object>Reservation__c</object>
+    <allowCreate>true</allowCreate>
+    <allowRead>true</allowRead>
+    <allowEdit>true</allowEdit>
+    <allowDelete>false</allowDelete>
+    <viewAllRecords>false</viewAllRecords>
+    <modifyAllRecords>false</modifyAllRecords>
+  </objectPermissions>
+
+  <objectPermissions>
+    <object>Bill__c</object>
+    <allowCreate>false</allowCreate>
+    <allowRead>true</allowRead>
+    <allowEdit>true</allowEdit>
+    <allowDelete>false</allowDelete>
+    <viewAllRecords>false</viewAllRecords>
+    <modifyAllRecords>false</modifyAllRecords>
+  </objectPermissions>
+
+
+  <!-- Tab Visibility -->
+  <tabVisibilities>
+    <tab>Order__c</tab>
+    <visibility>DefaultOn</visibility>
+  </tabVisibilities>
+
+
+  <!-- <tabVisibilities>
+    <tab>Bill__c</tab>
+    <visibility>DefaultOn</visibility>
+  </tabVisibilities>
+
+
+  <tabVisibilities>
+    <tab>Reservation__c</tab>
+    <visibility>DefaultOn</visibility>
+  </tabVisibilities>
+
+  <tabVisibilities>
+    <tab>Table__c</tab>
+    <visibility>DefaultOn</visibility>
+  </tabVisibilities>
+
+  <tabVisibilities>
+    <tab>Inventory__c</tab>
+    <visibility>Hidden</visibility>
+  </tabVisibilities> -->
+
+  <!-- App Visibility -->
+  <!-- <applicationVisibilities>
+    <application>Restaurant_App</application>
+    <visible>true</visible>
+    <default>true</default>
+  </applicationVisibilities> -->
+
+  <!-- Basic Salesforce Permissions Waiter Needs -->
+  <userPermissions>
+    <enabled>true</enabled>
+    <name>ApiEnabled</name>
+  </userPermissions>
+  <userPermissions>
+    <enabled>true</enabled>
+    <name>LightningExperienceUser</name>
+  </userPermissions>
+  <userPermissions>
+    <enabled>true</enabled>
+    <name>ViewRoles</name>
+  </userPermissions>
+
+  <userPermissions>
+    <enabled>true</enabled>
+    <name>ViewSetup</name>
+  </userPermissions>
+
+</Profile>
