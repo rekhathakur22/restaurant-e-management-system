@@ -4,8 +4,8 @@
   <pluralLabel>Tables</pluralLabel>
   <nameField>
     <label>Table Number</label>
-    <type>AutoNumber</type>
-    <displayFormat>TBL-{000}</displayFormat>
+    <type>Text</type>
+
   </nameField>
   <deploymentStatus>Deployed</deploymentStatus>
   <sharingModel>ReadWrite</sharingModel>

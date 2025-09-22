@@ -1,38 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
-    <tabVisibilities>
-        <tab>Reservation__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-
-    <tabVisibilities>
-        <tab>Inventory__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-
-    <tabVisibilities>
-        <tab>Menu_Item__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-
-    <tabVisibilities>
-        <tab>Table__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-
-
-    <tabVisibilities>
-        <tab>Bill__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-
-
-    <tabVisibilities>
-        <tab>Order__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-
-
     <custom>false</custom>
     <userLicense>Salesforce</userLicense>
     <userPermissions>

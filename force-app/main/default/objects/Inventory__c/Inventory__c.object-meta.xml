@@ -8,4 +8,5 @@
   </nameField>
   <deploymentStatus>Deployed</deploymentStatus>
   <sharingModel>ReadWrite</sharingModel>
+  <visibility>Public</visibility>
 </CustomObject>
