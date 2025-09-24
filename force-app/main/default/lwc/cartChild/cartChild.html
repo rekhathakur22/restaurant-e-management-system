@@ -1,0 +1,13 @@
+<!-- waiterTableOrders.html -->
+<template>
+    <lightning-card title="Table Orders">
+        <template if:true={orders}>
+            <lightning-datatable
+                key-field="Id"
+                data={orders}
+                columns={columns}>
+            </lightning-datatable>
+            <p class="slds-p-around_medium"><b>Total Bill:</b> {total}</p>
+        </template>
+    </lightning-card>
+</template>

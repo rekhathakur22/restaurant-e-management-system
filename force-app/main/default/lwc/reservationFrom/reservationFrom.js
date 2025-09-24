@@ -34,6 +34,14 @@ export default class ReservationFrom extends  NavigationMixin(LightningElement) 
     handleTableChange(event){
         this.selectedTable = event.detail.value;
     }
+
+     // Inject table into record before save
+    handleSubmit(event) {
+        event.preventDefault();
+        const fields = event.detail.fields;
+        fields.Table__c = this.selectedTable; // 👈 Fix
+        this.template.querySelector('lightning-record-edit-form').submit(fields);
+    }
   handleSuccess(event){
        const reservationId = event.detail.id;
 

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Tables with Active Orders">
+        <template if:true={tables}>
+            <ul>
+                <template for:each={tables} for:item="tbl">
+                    <li key={tbl.Id} class="slds-p-around_x-small">
+                        <lightning-button 
+                            variant="brand" 
+                            label={tbl.Name} 
+                            data-id={tbl.Id} 
+                            onclick={handleTableClick}>
+                        </lightning-button>
+                    </li>
+                </template>
+            </ul>
+        </template>
+         <template if:true={selectedTableId}>
+            <c-cart-child table-id={selectedTableId}></c-cart-child>
+        </template>
+   </lightning-card>
+</template>

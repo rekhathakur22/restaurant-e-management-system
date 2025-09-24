@@ -5,11 +5,15 @@
           <lightning-record-edit-form
           object-api-name = "Reservation__c"
           onsuccess={handleSuccess}
+          onsubmit={handleSubmit}
           >
           <lightning-messages></lightning-messages>
 
           <!-- customer lookup -->
            <lightning-input-field field-name="Customer__c"></lightning-input-field>
+
+            <!-- Number of Guests -->
+            <lightning-input-field field-name="Number_of_Guests__c"></lightning-input-field>
 
            <!-- table lookup -->
            <lightning-combobox
@@ -20,15 +24,12 @@
             onchange = {handleTableChange}
            ></lightning-combobox>
 
-           <!-- Number of Guests -->
-            <lightning-input-field field-name="Number_of_Guests__c"></lightning-input-field>
+          
 
-            <!-- Reservation Date -->
-            <lightning-input-field field-name="Reservation_Date__c"></lightning-input-field>
+            <!-- Reservation DateTime -->
+            <lightning-input-field field-name="Reservation_DateTime__c"></lightning-input-field>
 
-            <!-- Reservation Time -->
-            <lightning-input-field field-name="Reservation_Time__c">
-              </lightning-input-field>
+            
 
                <!-- create Reservation button -->
             <lightning-button 

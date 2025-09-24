@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Positive_Number_of_Guests</fullName>
+  <active>true</active>
+  <description>Ensure number of guests is greater than zero</description>
+  <errorConditionFormula>
+    Number_of_Guests__c &lt;= 0
+  </errorConditionFormula>
+  <errorMessage>Number of guests must be greater than 0.</errorMessage>
+  <errorDisplayField>Number_of_Guests__c</errorDisplayField>
+</ValidationRule>
