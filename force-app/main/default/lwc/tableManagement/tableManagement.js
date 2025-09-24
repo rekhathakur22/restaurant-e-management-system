@@ -2,6 +2,7 @@ import { LightningElement, wire, track } from 'lwc';
 import getTables from '@salesforce/apex/TableController.getTables';
 import updateTableStatus from '@salesforce/apex/TableController.updateTableStatus';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import { refreshApex } from '@salesforce/apex'; // ✅ FIX 1: Import refreshApex
 
 const actions = [
     { label: 'Mark as Occupied', name: 'mark_occupied' },
@@ -22,13 +23,15 @@ const columns = [
 export default class TableManagement extends LightningElement {
     @track tables;
     columns = columns;
+    wiredTablesResult; // ✅ FIX 2: Store wired result for refresh
 
     @wire(getTables)
-    wiredTables({ error, data }) {
-        if (data) {
-            this.tables = data;
-        } else if (error) {
-            console.error('Error fetching tables:', error);
+    wiredTables(result) {
+        this.wiredTablesResult = result; // ✅ FIX 3: Keep wired result
+        if (result.data) {
+            this.tables = result.data;
+        } else if (result.error) {
+            console.error('Error fetching tables:', result.error);
         }
     }
 
@@ -43,33 +46,32 @@ export default class TableManagement extends LightningElement {
         else if (actionName === 'mark_cleaning') newStatus = 'Cleaning';
 
         updateTableStatus({ tableId: row.Id, status: newStatus })
-    .then(() => {
-        this.dispatchEvent(
-            new ShowToastEvent({
-                title: 'Success',
-                message: `Table ${row.Name} updated to ${newStatus}`,
-                variant: 'success'
+            .then(() => {
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'Success',
+                        message: `Table ${row.Name} updated to ${newStatus}`,
+                        variant: 'success'
+                    })
+                );
+                // ✅ FIX 4: Refresh correct wired result
+                return refreshApex(this.wiredTablesResult);
             })
-        );
-        return refreshApex(this.tables);
-    })
-    .catch(error => {
-        // Safely extract the error message
-        let errorMsg = 'Unknown error';
-        if (error && error.body && error.body.message) {
-            errorMsg = error.body.message;
-        } else if (error && error.message) {
-            errorMsg = error.message;
-        }
-        
-        this.dispatchEvent(
-            new ShowToastEvent({
-                title: 'Error updating table',
-                message: errorMsg,
-                variant: 'error'
-            })
-        );
-    });
+            .catch(error => {
+                let errorMsg = 'Unknown error';
+                if (error?.body?.message) {
+                    errorMsg = error.body.message;
+                } else if (error?.message) {
+                    errorMsg = error.message;
+                }
 
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'Error updating table',
+                        message: errorMsg,
+                        variant: 'error'
+                    })
+                );
+            });
     }
 }

@@ -10,4 +10,11 @@ public with sharing class TableController {
         tbl.Table_Status__c = status;
         update tbl;
     }
+
+    @AuraEnabled 
+    public static List<Table__c> getAvailableTables(){
+        return [SELECT Id,Name,Seating_Capacity__c,Table_Status__c 
+        FROM Table__c
+        WHERE Table_Status__c = 'Available'];
+    }
 }

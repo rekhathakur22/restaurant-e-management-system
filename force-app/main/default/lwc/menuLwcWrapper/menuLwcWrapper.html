@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Menu">
+        <div class="slds-m-around_medium">
+            <template if:true={reservationId}>
+                <!-- Pass reservationId to Menu LWC -->
+                <c-menu reservation-id={reservationId}></c-menu>
+            </template>
+            <template if:false={reservationId}>
+                <p>Loading reservation info...</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

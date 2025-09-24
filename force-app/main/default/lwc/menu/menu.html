@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Menu">
+        <template for:each={groupedMenu} for:item="group">
+            <h2 key={group.Category__c} class="slds-text-heading_medium slds-m-top_medium">{group.Category__c}</h2>
+            <template for:each={group.items} for:item="item">
+                <div key={item.Id} class="slds-box slds-m-around_small slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                    <div>
+                        <strong>{item.Name}</strong> - ₹{item.Price__c}
+                        <p>{item.Description__c}</p>
+                        <p><em>Availability: {item.Availability__c}</em></p>
+                    </div>
+                    <div>
+                        <lightning-button 
+                            variant="neutral" 
+                            label="Add" 
+                            data-id={item.Id} 
+                            onclick={handleAddToCart}
+                            disabled={item.isUnavailable}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Cart" class="slds-m-top_medium">
+        <template if:true={cart.length}>
+            <template for:each={cart} for:item="c">
+                <div key={c.Id} class="slds-box slds-m-around_x-small slds-grid slds-grid_align-spread">
+                    <div>{c.Name} - ₹{c.Price__c}</div>
+                    <div>
+                        <lightning-button 
+                            variant="destructive" 
+                            label="Remove" 
+                            data-id={c.Id} 
+                            onclick={handleRemoveFromCart}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+            <p class="slds-p-around_small"><strong>Total: ₹{cartTotal}</strong></p>
+             <lightning-button label="Submit Order" onclick={handleSubmitOrder}></lightning-button>
+        </template>
+        <template if:false={cart.length}>
+            <p class="slds-p-around_small">Cart is empty</p>
+        </template>
+    </lightning-card>
+</template>
