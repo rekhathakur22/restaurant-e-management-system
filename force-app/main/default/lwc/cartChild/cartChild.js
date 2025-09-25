@@ -8,8 +8,8 @@ export default class WaiterTableOrders extends LightningElement {
     @track total = 0;
 
     // waiterTableOrders.js (add columns)
-columns = [
-    { label: 'Item', fieldName: 'Menu_Item__r.Name' },
+@track columns = [
+    { label: 'Item', fieldName:'Menu_Item_Name' },
     { label: 'Quantity', fieldName: 'Quantity__c' },
     { label: 'Price', fieldName: 'Price__c' },
     { label: 'Status', fieldName: 'Status__c' }

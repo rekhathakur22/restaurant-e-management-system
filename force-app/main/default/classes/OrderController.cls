@@ -22,7 +22,8 @@ public with sharing class OrderController {
                 Order__c = order.Id,
                 Menu_Item__c = i.menuItemId,
                 Quantity__c = i.quantity,
-                Price__c = i.price
+                Price__c = i.price,
+                Status__c='New'
             ));
          }
 
